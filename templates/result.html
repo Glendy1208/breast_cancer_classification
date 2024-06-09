@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction - Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .prediction-text {
+            margin-top: 20px;
+        }
+        .prediction-text.ganas {
+            color: red;
+        }
+        .prediction-text.jinak {
+            color: green;
+        }
+        .input-data {
+            margin-top: 20px;
+        }
+        .input-data h3 {
+            margin-bottom: 10px;
+        }
+        .input-data ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .input-data li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="text-center">Prediction Result</h1>
+        <h2 class="prediction-text {{ 'ganas' if prediction_text == 'Ganas' else 'jinak' }}">{{ prediction_text }}</h2>
+        <div class="input-data">
+            <h3>Input Data:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Clump thickness: {{ input_data[0] }}</li>
+                <li class="list-group-item">Uniformity of cell size: {{ input_data[1] }}</li>
+                <li class="list-group-item">Uniformity of cell shape: {{ input_data[2] }}</li>
+                <li class="list-group-item">Marginal adhesion: {{ input_data[3] }}</li>
+                <li class="list-group-item">Single epithelial cell size: {{ input_data[4] }}</li>
+                <li class="list-group-item">Bare nuclei: {{ input_data[5] }}</li>
+                <li class="list-group-item">Bland chromatin: {{ input_data[6] }}</li>
+                <li class="list-group-item">Normal nucleoli: {{ input_data[7] }}</li>
+                <li class="list-group-item">Mitoses: {{ input_data[8] }}</li>
+            </ul>
+        </div>
+        <a href="/" class="btn btn-primary btn-block">Back to Input Data</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

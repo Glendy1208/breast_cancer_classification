@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction - Input Data</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Breast Cancer Prediction</h1>
+        <form id="prediction-form" action="/predict" method="post">
+            <div class="form-group">
+                <label for="Clump_thickness">Clump thickness:</label>
+                <input type="number" class="form-control" name="Clump_thickness" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Uniformity_of_cell_size">Uniformity of cell size:</label>
+                <input type="number" class="form-control" name="Uniformity_of_cell_size" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Uniformity_of_cell_shape">Uniformity of cell shape:</label>
+                <input type="number" class="form-control" name="Uniformity_of_cell_shape" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Marginal_adhesion">Marginal adhesion:</label>
+                <input type="number" class="form-control" name="Marginal_adhesion" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Single_epithelial_cell_size">Single epithelial cell size:</label>
+                <input type="number" class="form-control" name="Single_epithelial_cell_size" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Bare_nuclei">Bare nuclei:</label>
+                <input type="number" step="any" class="form-control" name="Bare_nuclei" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Bland_chromatin">Bland chromatin:</label>
+                <input type="number" class="form-control" name="Bland_chromatin" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Normal_nucleoli">Normal nucleoli:</label>
+                <input type="number" class="form-control" name="Normal_nucleoli" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="Mitoses">Mitoses:</label>
+                <input type="number" class="form-control" name="Mitoses" min="1" max="10" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
