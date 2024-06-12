@@ -4,6 +4,7 @@ import numpy as np
 
 # Inisialisasi aplikasi Flask
 app = Flask(__name__)
+application = app
 
 # Memuat model yang telah disimpan
 with open('stacking_classifier.pkl', 'rb') as file:
@@ -36,6 +37,8 @@ def result():
     prediction_text = request.args.get('prediction_text')
     input_data = request.args.get('input_data').split(',')
     input_data = list(map(int, input_data))
-    return render_template('result.html', prediction_text=prediction_text, input_data=input_data)
+    accuracy_model = 0.97
+    return render_template('result.html', prediction_text=prediction_text, input_data=input_data, accuracy_model=accuracy_model)
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

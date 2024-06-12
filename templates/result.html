@@ -45,6 +45,7 @@
     <div class="container text-center">
         <h1 class="text-center">Prediction Result</h1>
         <h2 class="prediction-text {{ 'ganas' if prediction_text == 'Ganas' else 'jinak' }}">{{ prediction_text }}</h2>
+        <h5 class="text-secondary">Akurasi Model: {{ accuracy_model }}</h5>
         <div class="input-data">
             <h3>Input Data:</h3>
             <ul class="list-group">
